@@ -1,0 +1,26 @@
+{
+  "name": "pet-project",
+  "version": "1.0.0",
+  "description": "project to study codding",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npx nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozi5500/Pet_Project.git"
+  },
+  "author": "Rozi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rozi5500/Pet_Project/issues"
+  },
+  "homepage": "https://github.com/rozi5500/Pet_Project#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
