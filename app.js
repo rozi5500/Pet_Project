@@ -1,13 +1,22 @@
-const func = require('./sumator.js')
-
+const express = require('express');
 const dotenv = require('dotenv');
+
+const { movieRouter } = require('./router');
+const sequelize = require('./db')
+
 dotenv.config();
 
-const { NODE_ENV, PORT } = require('./config/config')
+const app = express();
 
+app.use(express.json())
 
-console.log(NODE_ENV);
-console.log(PORT);
+sequelize.sync().then(() => {
+  console.log('Connected to db')
+}).catch((e) => {
+  console.log(e)
+})
 
+app.use('/movie', movieRouter)
 
-const sumator1 = func.sumator(5, 20);
+app.listen(5000, () => console.log(`Server started on ${ 5000 } port`))
+
