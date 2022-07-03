@@ -1,14 +1,16 @@
-const dotenv = require('dotenv');
+const dotenv = require('dotenv')
+const express = require('express')
+const path = require('path')
+const os = require('os')
+
 dotenv.config();
 
-const { NODE_ENV, PORT } = require('./config/config')
+const { PORT } = require('./config/config');
 
+const app = express();
 
-console.log(process.argv);
-
-function sumator(a, b) {
-  return b + a;
+function startApp() {
+  app.listen(PORT, () => console.log(`Server is listening ${PORT} port`))
 }
 
-const sumator1 = sumator(14, 10);
-console.log(sumator1);
+startApp();
